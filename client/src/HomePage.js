@@ -1,4 +1,5 @@
 import React from 'react'
+import DogCard from './DogCard'
 import NavBar from './NavBar'
 
 function HomePage() {
@@ -6,6 +7,7 @@ function HomePage() {
     <div>
         <header>Fetch</header>
         <NavBar />
+        <DogCard />
     </div>
   )
 }
