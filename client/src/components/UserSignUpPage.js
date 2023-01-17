@@ -32,9 +32,16 @@ function UserSignUpPage() {
         <input></input>
       </label>
       <br></br>
-      <label>Owner Username:
-        <input></input>
+      <label>Does Your Owner Have an Account?
+        <label>Yes 
+        <input type='checkbox'></input>
+        </label>
+        <label>No 
+        <input type='checkbox'></input>
+        </label>
       </label>
+      <br></br>
+      <button>Submit</button>
 
     </div>
   )
