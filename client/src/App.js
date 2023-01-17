@@ -1,6 +1,6 @@
 import './App.css';
-import SignInPage from './SignInPage';
-import HomePage from './HomePage';
+import SignInPage from './components/SignInPage';
+import HomePage from './components/HomePage';
 
 function App() {
   return (
