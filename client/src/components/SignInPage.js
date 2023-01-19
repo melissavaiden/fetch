@@ -1,4 +1,5 @@
 import React from 'react'
+import {NavLink} from 'react-router-dom'
 
 export default function SignInPage() {
   return (
@@ -13,7 +14,7 @@ export default function SignInPage() {
         <br></br>
         <button>Sign In</button>
         <br></br>
-        <button>Sign Up</button>
+        <NavLink>Sign Up</NavLink>
     </div>
   )
 }

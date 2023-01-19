@@ -1,8 +1,6 @@
 import React from 'react'
 import DogCard from './DogCard'
 import NavBar from './NavBar'
-import UserSignUpPage from './UserSignUpPage'
-import { Route, Switch } from 'react-router-dom'
 
 
 function HomePage() {
@@ -10,8 +8,7 @@ function HomePage() {
     <div>
         <header>Fetch</header>
        <NavBar />
-       {/* <DogCard /> */}
-        {/* <UserSignUpPage /> */}
+       <DogCard />
     </div>
   )
 }
