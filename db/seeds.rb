@@ -53,6 +53,12 @@ puts 'Start Seeding!'
   Tag.create(title: 'strangers')
   Tag.create(title: 'loudnoises')
 
+  DogTag.create(dog_id: 1, tag_id: 1)
+  DogTag.create(dog_id: 1, tag_id: 2)
+  DogTag.create(dog_id: 2, tag_id: 3)
+  DogTag.create(dog_id: 2, tag_id: 4)
+
+
 
 
 
