@@ -4,8 +4,8 @@ import { NavLink } from 'react-router-dom';
 function NavBar() {
   return (
     <div>
-        <div>Favorites</div>
-        <div>Log Out</div>
+        <NavLink>Favorites</NavLink>
+        <NavLink>Log Out</NavLink>
     </div>
   )
 }
