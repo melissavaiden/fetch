@@ -1,0 +1,2 @@
+class DogTagsController < ApplicationController
+end
