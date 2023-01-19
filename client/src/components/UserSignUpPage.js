@@ -34,10 +34,10 @@ function UserSignUpPage() {
       <br></br>
       <label>Does Your Owner Have an Account?
         <label>Yes 
-        <input type='checkbox'></input>
+        <input type='checkbox' value='yes'></input>
         </label>
         <label>No 
-        <input type='checkbox'></input>
+        <input type='checkbox' value='no'></input>
         </label>
       </label>
       <br></br>

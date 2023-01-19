@@ -7,9 +7,9 @@ function HomePage() {
   return (
     <div>
         <header>Fetch</header>
-        {/* <NavBar />
-        <DogCard /> */}
-        <UserSignUpPage />
+       <NavBar />
+       {/* <DogCard /> */}
+        {/* <UserSignUpPage /> */}
     </div>
   )
 }

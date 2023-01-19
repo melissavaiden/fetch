@@ -1,6 +1,7 @@
 import './App.css';
 import SignInPage from './components/SignInPage';
 import HomePage from './components/HomePage';
+// import { Route, Switch } from 'react-router-dom'
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       {/* <SignInPage /> */}
       <HomePage />
     </div>
+
   );
 }
 
