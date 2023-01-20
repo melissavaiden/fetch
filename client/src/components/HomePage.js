@@ -3,12 +3,12 @@ import DogCard from './DogCard'
 import NavBar from './NavBar'
 
 
-function HomePage() {
+function HomePage({dogs}) {
   return (
     <div>
         <header>Fetch</header>
        <NavBar />
-       <DogCard />
+       <DogCard dogs={dogs}/>
     </div>
   )
 }

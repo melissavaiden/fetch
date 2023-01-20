@@ -12,15 +12,14 @@ function App() {
   useEffect(() => {
     fetch("http://localhost:3000/dogs")
     .then((r) => r.json())
-    .then((dog) => console.log(dog))
+    .then((dog) => setDogs(dog))
   },[])
-
 
   return (
     <>
       <Routes>
         <Route path='signup' element={<UserSignUpPage />}></Route>
-        <Route path='homepage' element={<HomePage />}></Route>
+        <Route path='homepage' element={<HomePage dogs={dogs}/>}></Route>
         <Route path='/' element={<SignInPage />}></Route>
       </Routes>
     </>
