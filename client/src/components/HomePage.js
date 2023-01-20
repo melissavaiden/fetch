@@ -6,7 +6,6 @@ import NavBar from './NavBar'
 function HomePage({dogs}) {
   return (
     <div>
-        <header>Fetch</header>
        <NavBar />
        <DogCard dogs={dogs}/>
     </div>

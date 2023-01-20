@@ -15,7 +15,7 @@ export default function SignInPage() {
       </div>
       <br></br>
       <br></br>
-      <button>Sign In</button>
+      <button className='btn btn-primary'>Sign In</button>
       <br></br>
       <div className='container'>
         <label>Don't have an account?</label>
