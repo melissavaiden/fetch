@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-    <h1>FETCH</h1>
+    <h1 className='display-1'>FETCH</h1>
       <Routes>
         <Route path='signup' element={<UserSignUpPage />}></Route>
         <Route path='homepage' element={<HomePage dogs={dogs}/>}></Route>
