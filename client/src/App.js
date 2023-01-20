@@ -17,12 +17,12 @@ function App() {
 
   return (
     <>
+    <h1>FETCH</h1>
       <Routes>
         <Route path='signup' element={<UserSignUpPage />}></Route>
         <Route path='homepage' element={<HomePage dogs={dogs}/>}></Route>
         <Route path='/' element={<SignInPage />}></Route>
         <Route path='/user_sign_up' element={<UserSignUpPage />}></Route>
-
       </Routes>
     </>
   );
