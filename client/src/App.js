@@ -6,14 +6,14 @@ import { Route, Routes } from 'react-router-dom'
 import UserSignUpPage from './components/UserSignUpPage';
 
 function App() {
-  // const [dogs, setDogs] = useState([])
+  const [dogs, setDogs] = useState([])
 
 
-  // useEffect(() => {
-  //   fetch("http://localhost:9292/food")
-  //   .then((r) => r.json())
-  //   .then(() => ())
-  // },[])
+  useEffect(() => {
+    fetch("http://localhost:3000/dogs")
+    .then((r) => r.json())
+    .then((dog) => console.log(dog))
+  },[])
 
 
   return (
