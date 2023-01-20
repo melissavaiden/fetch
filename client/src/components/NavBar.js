@@ -3,9 +3,11 @@ import { NavLink } from 'react-router-dom';
 
 function NavBar() {
   return (
-    <div>
+    <div className='navbar navbar-expand'>
+      <div className='container'>
         <NavLink>Favorites</NavLink>
         <NavLink>Log Out</NavLink>
+      </div>
     </div>
   )
 }

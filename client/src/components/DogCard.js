@@ -7,19 +7,13 @@ function DogCard({dogs}) {
     return (
       <div key={dog.id} className='card'>
         <div className='card-body'>
-        <img className='card-img-top' src={dog.picture_url}></img>
+        <img className='card-img-top' alt='dog' src={dog.picture_url}></img>
         <h1 className='card-title'>{dog.name}</h1>
         <div className='card-subtitle'>{dog.age}</div>
         <button>Add to Favorites</button>
         <button>Hide</button>
         <OwnerCard />
         </div>
-        {/* <img className='card-img-top' src={dog.picture_url}></img>
-        <h1 className='card-title'>{dog.name}</h1>
-        <span className='card-subtitle'>{dog.age}</span>
-        <button>Add to Favorites</button>
-        <button>Hide</button>
-        <OwnerCard /> */}
       </div>
     )
   })
