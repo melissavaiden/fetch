@@ -13,7 +13,7 @@ export default function SignInPage() {
         <br></br>
         <button>Sign In</button>
         <br></br>
-        <NavLink>Sign Up</NavLink>
+        <NavLink to="/user_sign_up">Sign Up</NavLink>
         <h1>FETCH</h1>
 
     </div>

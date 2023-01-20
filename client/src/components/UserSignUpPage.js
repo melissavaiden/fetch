@@ -4,33 +4,32 @@ function UserSignUpPage() {
   return (
     <div>
       <h1>Sign Up</h1>
-      <label>Username:
-        <input></input>
+      <div className='container'>
+        <div className='row'>
+        <label className='form-label'>Username:
+        <input className='form-control'></input>
+        </label>
+      </div>
+      <div className='row'>  
+        <label className='form-label'>Password:
+        <input className='form-control'></input>
+         </label>
+      </div>
+      <div className='row'>
+        <label className='form-label'>Name:
+        <input className='form-control'></input>
+        </label>
+      </div>
+      <div className='row'>
+      <label className='form-label'>Picture:
+        <input className='form-control'></input>
       </label>
-      <br></br>
-      <label>Password:
-        <input></input>
+      </div>
+      <div className='row'>
+      <label className='form-label'>Age:
+        <input className='form-control'></input>
       </label>
-      <br></br>
-      <label>Name:
-        <input></input>
-      </label>
-      <br></br>
-      <label>Picture:
-        <input></input>
-      </label>
-      <br></br>
-      <label>Age:
-        <input></input>
-      </label>
-      <br></br>
-      <label>Favs:
-        <input></input>
-      </label>
-      <br></br>
-      <label>Hates:
-        <input></input>
-      </label>
+      </div>
       <br></br>
       <label>Does Your Owner Have an Account?
         <label>Yes 
@@ -42,7 +41,7 @@ function UserSignUpPage() {
       </label>
       <br></br>
       <button>Submit</button>
-
+      </div> 
     </div>
   )
 }
