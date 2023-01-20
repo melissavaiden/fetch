@@ -13,6 +13,6 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        User.find(params[:id])
+        params.permit(:username, :password)
     end
 end
