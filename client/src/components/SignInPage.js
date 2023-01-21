@@ -6,7 +6,7 @@ export default function SignInPage() {
   const [password, setPassword] = useState()
 
   function handleSubmit() {
-    fetch('http://localhost:4000/', {
+    fetch('http://localhost:4000/login', {
       method: 'POST', 
       headers: {
         "Content-Type": "application/json"
@@ -41,7 +41,7 @@ export default function SignInPage() {
           <label className='form-label'>Password</label>
         </div>
         <br></br>
-        <button className='btn btn-primary'>Sign In</button>
+        <button className='btn btn-primary'>Login</button>
       </form>
 
       <br></br>
