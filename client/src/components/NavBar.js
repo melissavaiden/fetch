@@ -12,9 +12,9 @@ function NavBar() {
   return (
     <div className='navbar navbar-expand'>
       <div className='container'>
-        <NavLink>Favorites</NavLink>
-        <NavLink>Add a New Pup!</NavLink>
-        <NavLink onClick={handleLogOut}>Log Out</NavLink>
+        <NavLink to='/favorites'>Favorites</NavLink>
+        <NavLink to='/newdog'>Add a New Pup!</NavLink>
+        <NavLink to='/'onClick={handleLogOut}>Log Out</NavLink>
       </div>
     </div>
   )

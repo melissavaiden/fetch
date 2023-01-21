@@ -2,7 +2,7 @@ import React from 'react'
 import OwnerCard from './OwnerCard'
 
 function DogCard({dogs}) {
-  console.log(dogs)
+
   let dog = dogs.map((dog) => {
     return (
       <div key={dog.id} className='card'>
