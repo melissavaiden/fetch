@@ -1,6 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function UserSignUpPage() {
+  const [newUser, setNewUser] = useState({
+    username:"",
+    password:""
+  })
   return (
     <div>
       <h1>Sign Up</h1>
@@ -15,7 +19,7 @@ function UserSignUpPage() {
         <input className='form-control'></input>
          </label>
       </div>
-      <div className='row'>
+      {/* <div className='row'>
         <label className='form-label'>Name:
         <input className='form-control'></input>
         </label>
@@ -39,7 +43,7 @@ function UserSignUpPage() {
         <input type='checkbox' value='no'></input>
         </label>
       </label>
-      <br></br>
+      <br></br> */}
       <button>Submit</button>
       </div> 
     </div>

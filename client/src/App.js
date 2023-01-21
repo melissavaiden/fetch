@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 import SignInPage from './components/SignInPage';
 import HomePage from './components/HomePage';
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, NavLink } from 'react-router-dom'
 import UserSignUpPage from './components/UserSignUpPage';
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-    <h1 className='display-1'>FETCH</h1>
+    <NavLink to='/homepage' className='display-1'>FETCH</NavLink>
       <Routes>
         <Route path='signup' element={<UserSignUpPage />}></Route>
         <Route path='homepage' element={<HomePage dogs={dogs}/>}></Route>
