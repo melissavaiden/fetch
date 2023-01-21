@@ -10,6 +10,11 @@ class UsersController < ApplicationController
         render json: user
     end
 
+    def create
+        user = User.create(user_params)
+        render json: user, status: :ok
+    end
+
     private
 
     def user_params

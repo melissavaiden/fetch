@@ -6,6 +6,7 @@ function NavBar() {
     <div className='navbar navbar-expand'>
       <div className='container'>
         <NavLink>Favorites</NavLink>
+        <NavLink>Add a New Pup!</NavLink>
         <NavLink>Log Out</NavLink>
       </div>
     </div>
