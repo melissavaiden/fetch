@@ -41,7 +41,7 @@ export default function SignInPage() {
           <label className='form-label'>Password</label>
         </div>
         <br></br>
-        <button className='btn btn-primary'>Login</button>
+        <NavLink to='/homepage'className='btn btn-primary'>Login</NavLink>
       </form>
 
       <br></br>

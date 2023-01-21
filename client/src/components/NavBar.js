@@ -14,6 +14,7 @@ function NavBar() {
       <div className='container'>
         <NavLink to='/favorites'>Favorites</NavLink>
         <NavLink to='/newdog'>Add a New Pup!</NavLink>
+        <NavLink to='/mydogs'>My Pupperinos</NavLink>
         <NavLink to='/'onClick={handleLogOut}>Log Out</NavLink>
       </div>
     </div>

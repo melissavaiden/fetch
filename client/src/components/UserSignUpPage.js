@@ -46,33 +46,6 @@ function UserSignUpPage() {
           </div>
           <button>Submit</button>
         </form>
-
-
-      {/* <div className='row'>
-        <label className='form-label'>Name:
-        <input className='form-control'></input>
-        </label>
-      </div>
-      <div className='row'>
-      <label className='form-label'>Picture:
-        <input className='form-control'></input>
-      </label>
-      </div>
-      <div className='row'>
-      <label className='form-label'>Age:
-        <input className='form-control'></input>
-      </label>
-      </div>
-      <br></br>
-      <label>Does Your Owner Have an Account?
-        <label>Yes 
-        <input type='checkbox' value='yes'></input>
-        </label>
-        <label>No 
-        <input type='checkbox' value='no'></input>
-        </label>
-      </label>
-      <br></br> */}
       </div> 
     </div>
   )

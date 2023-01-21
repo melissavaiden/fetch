@@ -6,6 +6,7 @@ import { Route, Routes, NavLink } from 'react-router-dom'
 import UserSignUpPage from './components/UserSignUpPage';
 import Favorites from './components/Favorites';
 import NewDog from './components/NewDog';
+import MyPups from './components/MyPups';
 
 function App() {
   const [dogs, setDogs] = useState([])
@@ -27,6 +28,8 @@ function App() {
         <Route path='/user_sign_up' element={<UserSignUpPage />}></Route>
         <Route path='/favorites' element={<Favorites />}></Route>
         <Route path='/newdog' element={<NewDog />}></Route>
+        <Route path='/mydogs' element={<MyPups />}></Route>
+
 
 
       </Routes>
