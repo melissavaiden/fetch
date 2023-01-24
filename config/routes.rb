@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   
   resources :dog_tags
   resources :tags
-  resources :users
+  resources :users do
+    resources :dogs, only: [:index]
+  end
   resources :dogs
   
   post '/login', to: "sessions#create"

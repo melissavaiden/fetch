@@ -44,7 +44,7 @@ function UserSignUpPage() {
             <input className='form-control' name='password' onChange={handleChange}></input>
             </label>
           </div>
-          <button>Submit</button>
+          <button className='btn btn-primary'>Submit</button>
         </form>
       </div> 
     </div>
