@@ -5,7 +5,8 @@ export default function SignInPage({setUser}) {
   const [username, setUsername] = useState()
   const [password, setPassword] = useState()
 
-  function handleSubmit() {
+  function handleSubmit(e) {
+    e.preventDefault();
     fetch('http://localhost:4000/login', {
       method: 'POST', 
       headers: {
@@ -41,7 +42,7 @@ export default function SignInPage({setUser}) {
           <label className='form-label'>Password</label>
         </div>
         <br></br>
-        <NavLink to='/homepage'className='btn btn-primary'>Login</NavLink>
+        <button type='submit' className='btn btn-primary'>Login</button>
       </form>
 
       <br></br>

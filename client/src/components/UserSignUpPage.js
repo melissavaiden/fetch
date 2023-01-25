@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function UserSignUpPage() {
+function UserSignUpPage({setUser}) {
   const [newUser, setNewUser] = useState({
     username:"",
     password:""
@@ -14,7 +14,8 @@ function UserSignUpPage() {
     })
   }
 
-  function handleSubmit() {
+  function handleSubmit(e) {
+    e.preventDefault();
     fetch('http://localhost:3000/users', {
       method: 'POST',
       headers: {
@@ -25,8 +26,11 @@ function UserSignUpPage() {
         "password": newUser.password
       })
     })
-    .then((r) => r.json())
-    .then((user) => console.logg(user))
+    .then((r) => {
+      if (r.ok) {
+        r.json()
+      }})
+    .then((user) => setUser(user))
   }
 
   return (

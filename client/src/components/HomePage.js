@@ -3,7 +3,7 @@ import DogCard from './DogCard'
 import NavBar from './NavBar'
 
 
-function HomePage() {
+function HomePage({user, setUser}) {
   const [dogs, setDogs] = useState([])
 
       useEffect(() => {
@@ -12,9 +12,12 @@ function HomePage() {
         .then((dog) => setDogs(dog))
     },[])
 
+    console.log(user.username)
+
   return (
     <div>
-       <NavBar />
+       <NavBar setUser={setUser}/>
+       <div>Hello {user.username}</div>
        <DogCard dogs={dogs}/>
     </div>
   )

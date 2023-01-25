@@ -27,9 +27,9 @@ function App() {
     <>
     <NavLink to='/homepage' className='display-1'>FETCH</NavLink>
       <Routes>
-        <Route path='homepage' element={<HomePage />}></Route>
+        <Route path='homepage' element={<HomePage user={user} setUser={setUser}/>}></Route>
         <Route path='/' element={<SignInPage setUser={setUser}/>}></Route>
-        <Route path='/user_sign_up' element={<UserSignUpPage />}></Route>
+        <Route path='/user_sign_up' element={<UserSignUpPage setUser={setUser}/>}></Route>
         <Route path='/favorites' element={<Favorites />}></Route>
         <Route path='/newdog' element={<NewDog />}></Route>
         <Route path='/mydogs' element={<MyPups />}></Route>
