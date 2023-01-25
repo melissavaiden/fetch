@@ -1,13 +1,27 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom';
+import React, {useEffect} from 'react'
+import { NavLink, useNavigate } from 'react-router-dom';
 
-function NavBar() {
+function NavBar({setUser, user}) {
+  const navigate = useNavigate();
+
 
   function handleLogOut() {
-    fetch('http://localhost:4000/logout', {
+    fetch('/logout', {
       method: 'DELETE'
     })
+    .then((r) => {
+      if (r.ok) {
+        setUser({})
+      }
+    })
   }
+
+//   useEffect(() => {
+//     if (user.id)
+//       navigate("/homepage")
+//     else
+//       navigate('/')
+// },[])
 
   return (
     <div className='navbar navbar-expand'>

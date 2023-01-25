@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
-  resources :dog_tags
-  resources :tags
+  resources :dog_tags, only: [:index, :show, :create]
+  resources :tags, only: [:index, :show]
   resources :users, only: [:show, :create, :index]
   resources :dogs
   

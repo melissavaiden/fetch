@@ -9,33 +9,31 @@ import NewDog from './components/NewDog';
 import MyPups from './components/MyPups';
 
 function App() {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState({})
+  const [errors, setErrors] = useState('')
 
 
   useEffect(() => {
-    // auto-login
     fetch("/me").then((r) => {
       if (r.ok) {
         r.json().then((user) => setUser(user));
       }
+      else
+        setErrors('Error')
+
     });
   }, []);
 
-  console.log(user)
-
   return (
     <>
-    <NavLink to='/homepage' className='display-1'>FETCH</NavLink>
+    <div className='display-1'>FETCH</div>
       <Routes>
         <Route path='homepage' element={<HomePage user={user} setUser={setUser}/>}></Route>
-        <Route path='/' element={<SignInPage setUser={setUser}/>}></Route>
+        <Route path='/' element={<SignInPage setUser={setUser} user={user}/>}></Route>
         <Route path='/user_sign_up' element={<UserSignUpPage setUser={setUser}/>}></Route>
         <Route path='/favorites' element={<Favorites />}></Route>
         <Route path='/newdog' element={<NewDog />}></Route>
         <Route path='/mydogs' element={<MyPups />}></Route>
-
-
-
       </Routes>
     </>
   );

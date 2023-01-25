@@ -16,21 +16,20 @@ function UserSignUpPage({setUser}) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch('http://localhost:3000/users', {
-      method: 'POST',
+    fetch('/users', {
+      method: "POST",
       headers: {
-        "Content-type": "application/json"
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({
         "username": newUser.username,
         "password": newUser.password
-      })
+      }),
     })
     .then((r) => {
       if (r.ok) {
-        r.json()
+        r.json().then((user) => setUser(user))
       }})
-    .then((user) => setUser(user))
   }
 
   return (
@@ -48,7 +47,7 @@ function UserSignUpPage({setUser}) {
             <input className='form-control' name='password' onChange={handleChange}></input>
             </label>
           </div>
-          <button className='btn btn-primary'>Submit</button>
+          <button type='submit' className='btn btn-primary'>Submit</button>
         </form>
       </div> 
     </div>

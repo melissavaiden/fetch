@@ -7,16 +7,16 @@ function HomePage({user, setUser}) {
   const [dogs, setDogs] = useState([])
 
       useEffect(() => {
-        fetch("http://localhost:3000/dogs")
+        fetch("/dogs")
         .then((r) => r.json())
         .then((dog) => setDogs(dog))
     },[])
 
-    console.log(user.username)
+    console.log(user)
 
   return (
     <div>
-       <NavBar setUser={setUser}/>
+       <NavBar setUser={setUser} user={user}/>
        <div>Hello {user.username}</div>
        <DogCard dogs={dogs}/>
     </div>

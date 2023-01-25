@@ -1,13 +1,15 @@
-import React, { useState } from 'react'
-import {NavLink} from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import {NavLink, useNavigate} from 'react-router-dom'
 
-export default function SignInPage({setUser}) {
+export default function SignInPage({setUser, user}) {
   const [username, setUsername] = useState()
   const [password, setPassword] = useState()
+  const navigate = useNavigate();
+
 
   function handleSubmit(e) {
     e.preventDefault();
-    fetch('http://localhost:4000/login', {
+    fetch('/login', {
       method: 'POST', 
       headers: {
         "Content-Type": "application/json"
@@ -15,12 +17,23 @@ export default function SignInPage({setUser}) {
       body: JSON.stringify({
         "username" : username,
         "password" : password
-      })
+      }),
     })
-    .then((r) => r.json())
-    .then((newUser) => setUser(newUser))
-
+    .then((r) => {
+      if (r.ok) {
+        r.json().then((newUser) => setUser(newUser))
+      }
+    })
   }
+
+  useEffect(() => {
+    if (user.id)
+      navigate("/homepage")
+    else
+      navigate('/')
+},[user])
+
+  
 
   function handleUserChange(e) {
     setUsername(e.target.value)
