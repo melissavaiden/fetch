@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function UserSignUpPage({setUser}) {
   const [newUser, setNewUser] = useState({
     username:"",
     password:""
   })
+  const navigate = useNavigate();
+
 
 
   function handleChange(e) {
@@ -28,7 +31,24 @@ function UserSignUpPage({setUser}) {
     })
     .then((r) => {
       if (r.ok) {
-        r.json().then((user) => setUser(user))
+        r.json().then((user) => {
+          setUser(user)
+          fetch('/login', {
+            method: 'POST', 
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              "username" : newUser.username,
+              "password" : newUser.password
+            }),
+          })
+          .then((r) => {
+            if (r.ok) {
+              navigate('/homepage')
+            }
+          })
+        })
       }})
   }
 

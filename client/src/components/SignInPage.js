@@ -7,6 +7,7 @@ export default function SignInPage({setUser, user}) {
   const navigate = useNavigate();
 
 
+
   function handleSubmit(e) {
     e.preventDefault();
     fetch('/login', {
@@ -25,6 +26,13 @@ export default function SignInPage({setUser, user}) {
       }
     })
   }
+
+  useEffect(() => {
+    if (user.id)
+      navigate("/homepage")
+    else
+      navigate('/')
+},[user])
 
   
 
