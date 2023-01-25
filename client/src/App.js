@@ -26,7 +26,7 @@ function App() {
 
   return (
     <>
-    <div className='display-1'>FETCH</div>
+    <div className='display-1' id='page_title'>FETCH</div>
       <Routes>
         <Route path='homepage' element={<HomePage user={user} setUser={setUser}/>}></Route>
         <Route path='/' element={<SignInPage setUser={setUser} user={user}/>}></Route>
