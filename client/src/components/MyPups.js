@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import NavBar from './NavBar'
 
 function MyPups() {
     const [myDogs, setMyDogs] = useState([])
@@ -10,7 +11,10 @@ function MyPups() {
     // },[])
     
   return (
-    <div>MyPups</div>
+    <div>
+      <NavBar />
+      <div>MyPups</div>
+    </div>
   )
 }
 

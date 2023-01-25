@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import NavBar from './NavBar'
 
 function NewDog() {
     const [tags, setTags] = useState([])
@@ -28,6 +29,7 @@ function NewDog() {
 
   return (
     <div>
+        <NavBar />
         <div className='row'>
             <label className='form-label'>Name:
             <input className='form-control'></input>

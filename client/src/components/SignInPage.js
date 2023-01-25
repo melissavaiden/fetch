@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {NavLink} from 'react-router-dom'
 
-export default function SignInPage() {
+export default function SignInPage({setUser}) {
   const [username, setUsername] = useState()
   const [password, setPassword] = useState()
 
@@ -17,7 +17,7 @@ export default function SignInPage() {
       })
     })
     .then((r) => r.json())
-    .then((newUser) => console.log(newUser))
+    .then((newUser) => setUser(newUser))
 
   }
 
