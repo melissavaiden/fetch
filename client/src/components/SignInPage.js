@@ -32,7 +32,7 @@ export default function SignInPage({setUser, user}) {
       navigate("/homepage")
     else
       navigate('/')
-},[user])
+}, [user])
 
   
 

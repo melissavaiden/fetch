@@ -12,8 +12,6 @@ function HomePage({user, setUser}) {
         .then((dog) => setDogs(dog))
     },[])
 
-    console.log(user)
-
   return (
     <div>
        <NavBar setUser={setUser} user={user}/>

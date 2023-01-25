@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './App.css';
 import SignInPage from './components/SignInPage';
 import HomePage from './components/HomePage';
-import { Route, Routes, NavLink } from 'react-router-dom'
+import { Route, Routes} from 'react-router-dom'
 import UserSignUpPage from './components/UserSignUpPage';
 import Favorites from './components/Favorites';
 import NewDog from './components/NewDog';

@@ -22,7 +22,7 @@ function NavBar({setUser, user}) {
       navigate("/homepage")
     else
       navigate('/')
-},[])
+}, [user])
 
   return (
     <div className='navbar navbar-expand'>

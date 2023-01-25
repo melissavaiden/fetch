@@ -5,9 +5,9 @@ function MyPups() {
     const [myDogs, setMyDogs] = useState([])
 
     // useEffect(() => {
-    //     fetch("http://localhost:3000/")
+    //     fetch(`/${}`)
     //     .then((r) => r.json())
-    //     .then((tag) => setTags(tag))
+    //     .then((dog) => setMyDogs(dog))
     // },[])
     
   return (
