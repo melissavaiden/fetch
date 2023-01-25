@@ -16,17 +16,12 @@ function NavBar({setUser, user}) {
       }
     })
   }
-
-  useEffect(() => {
-    if (user.id)
-      navigate("/homepage")
-    else
-      navigate('/')
-}, [user])
+// 
 
   return (
     <div className='navbar navbar-expand'>
       <div className='container'>
+        <NavLink to='/homepage'>Home</NavLink>
         <NavLink to='/favorites'>Favorites</NavLink>
         <NavLink to='/newdog'>Add a New Pup!</NavLink>
         <NavLink to='/mydogs'>My Pupperinos</NavLink>

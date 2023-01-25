@@ -37,7 +37,7 @@ function NewDog() {
         </div>
         <div className='row'>
             <label className='form-label'>Picture:
-            <input className='form-control'></input>
+            <input className='form-control' type='file'></input>
             </label>
         </div>
         <div className='row'>

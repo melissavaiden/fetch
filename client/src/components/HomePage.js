@@ -15,7 +15,7 @@ function HomePage({user, setUser}) {
   return (
     <div>
        <NavBar setUser={setUser} user={user}/>
-       <div>Hello {user.username}</div>
+       <div>Hello {user.username}!</div>
        <DogCard dogs={dogs}/>
     </div>
   )
