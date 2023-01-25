@@ -52,7 +52,7 @@ export default function SignInPage({setUser, user}) {
           <br></br>
         </div>
         <div className='form-floating'>
-          <input type='text' className='form-control' placeholder='password' onChange={handlePasswordChange}></input>
+          <input type='password' className='form-control' placeholder='password' onChange={handlePasswordChange}></input>
           <label className='form-label'>Password</label>
         </div>
         <br></br>
@@ -61,8 +61,10 @@ export default function SignInPage({setUser, user}) {
 
       <br></br>
       <div className='container'>
-        <label>Don't have an account?</label>
-        <NavLink to="/user_sign_up">Sign Up</NavLink>
+        <div className='sign_up_container'>
+          <label>Don't have an account?</label><br></br>
+          <NavLink to="/user_sign_up">Sign Up</NavLink>
+        </div>
       </div>
     </div>
   )
