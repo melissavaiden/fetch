@@ -12,16 +12,17 @@ function NavBar({setUser, user}) {
     .then((r) => {
       if (r.ok) {
         setUser({})
+        navigate('/')
       }
     })
   }
 
-//   useEffect(() => {
-//     if (user.id)
-//       navigate("/homepage")
-//     else
-//       navigate('/')
-// },[])
+  useEffect(() => {
+    if (user.id)
+      navigate("/homepage")
+    else
+      navigate('/')
+},[])
 
   return (
     <div className='navbar navbar-expand'>
