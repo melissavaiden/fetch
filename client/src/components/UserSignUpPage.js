@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 
 function UserSignUpPage({setUser}) {
   const [newUser, setNewUser] = useState({
@@ -54,7 +54,7 @@ function UserSignUpPage({setUser}) {
 
   return (
     <div>
-      <h1>Sign Up</h1>
+      <h1 className='page_title'>Sign Up</h1>
       <div className='container'>
         <form onSubmit={handleSubmit}>
           <div className='row'>
@@ -64,11 +64,17 @@ function UserSignUpPage({setUser}) {
            </div>
           <div className='row'>  
             <label className='form-label'>Password:
-            <input className='form-control' name='password' onChange={handleChange}></input>
+            <input className='form-control' name='password' type='password' onChange={handleChange}></input>
             </label>
           </div>
           <button type='submit' className='btn btn-primary'>Submit</button>
         </form>
+        <div className='container'>
+          <div className='sign_in_container'>
+            <div>Already have an account?</div>
+            <NavLink to='/'>Login</NavLink>
+          </div>
+        </div>
       </div> 
     </div>
   )

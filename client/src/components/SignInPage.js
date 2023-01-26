@@ -22,11 +22,10 @@ export default function SignInPage({setUser, user}) {
     })
     .then((r) => {
       if (r.ok) {
-        r.json().then((newUser) => setUser(newUser))
+        r.json().then((currentUser) => setUser(currentUser))
       }
     })
   }
-
   useEffect(() => {
     if (user.id)
       navigate("/homepage")

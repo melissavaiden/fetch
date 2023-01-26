@@ -8,8 +8,6 @@
 
 puts 'Start Seeding!'
 
-
-
   Dog.create(user_id: 1, picture_url: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg', name: 'Bella', age: 1)
   Dog.create(user_id: 2, picture_url: 'http://cdn.akc.org/content/article-body-image/siberian_husky_cute_puppies.jpg', name: 'Max', age: 2)
   Dog.create(user_id: 3, picture_url: 'https://i.ytimg.com/vi/MQ11fPpPKwg/maxresdefault.jpg', name: 'Charlie', age: 3)
@@ -22,16 +20,16 @@ puts 'Start Seeding!'
   Dog.create(user_id: 10, picture_url: 'https://i.pinimg.com/736x/f3/89/ef/f389efb2a57669d9b50b97659507a2fe.jpg', name: 'Molly', age: 10)
 
 
-  User.create(username: 'PawsomePup', password: nil)
-  User.create(username: 'CanineCrush', password: nil)
-  User.create(username: 'WoofWooer', password: nil)
-  User.create(username: 'BarkBuddies', password: nil)
-  User.create(username: 'PawfectMatch', password: nil)
-  User.create(username: 'DoggyDate', password: nil)
-  User.create(username: 'TailWagginLove', password: nil)
-  User.create(username: 'LeashLover', password: nil)
-  User.create(username: 'HoundHarmony', password: nil)
-  User.create(username: 'BoneAmor', password: nil)
+  User.create(username: 'PawsomePup', password: 'hello')
+  User.create(username: 'CanineCrush', password: 'hello')
+  User.create(username: 'WoofWooer', password: 'hello')
+  User.create(username: 'BarkBuddies', password: 'hello')
+  User.create(username: 'PawfectMatch', password: 'hello')
+  User.create(username: 'DoggyDate', password: 'hello')
+  User.create(username: 'TailWagginLove', password: 'hello')
+  User.create(username: 'LeashLover', password: 'hello')
+  User.create(username: 'HoundHarmony', password: 'hello')
+  User.create(username: 'BoneAmor', password: 'hello')
 
   Tag.create(title: 'dogpark')
   Tag.create(title: 'fetch')

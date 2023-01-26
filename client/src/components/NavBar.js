@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import { NavLink, useNavigate } from 'react-router-dom';
 
 function NavBar({setUser, user}) {
@@ -24,7 +24,7 @@ function NavBar({setUser, user}) {
         <NavLink to='/homepage'>Home</NavLink>
         <NavLink to='/favorites'>Favorites</NavLink>
         <NavLink to='/newdog'>Add a New Pup!</NavLink>
-        <NavLink to='/mydogs'>My Pupperinos</NavLink>
+        <NavLink to='/mydogs' >My Pupperinos</NavLink>
         <NavLink to='/'onClick={handleLogOut}>Log Out</NavLink>
       </div>
     </div>
