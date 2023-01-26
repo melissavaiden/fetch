@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import NavBar from './NavBar'
 
-function NewDog() {
+function NewDog({user}) {
     const [tags, setTags] = useState([])
     const [newDogTags, setNewDogTags] = useState([])
     const [newDog, setNewDog] = useState({
-        name: "",
-        age: "",
+        user_id: user.id,
         picture_url:"",
+        name: "",
+        age: ""
     })
+
 
     useEffect(() => {
         fetch("/tags")
@@ -30,10 +32,6 @@ function NewDog() {
         })
     }
 
-    function addTagsToNewDog(newTagId) {
-        setNewDogTags(newDogTags => [...newDogTags, newTagId])
-    }
-
     function formSubmit(e) {
         e.preventDefault();
         let selectedTags = document.getElementsByClassName('active')
@@ -41,8 +39,21 @@ function NewDog() {
         selectedTagsArray.map((tag) => {
             setNewDogTags(newDogTags => [...newDogTags, tag.id])
         })
+        fetch('/dogs', {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              "user_id": newDog.user_id,
+              "picture_url": newDog.picture_url,
+              "name": newDog.name,
+              "age": newDog.age
+            }),
+          })
+        .then((r) => r.json())
+        .then((dog) => console.log(dog))
     }
-    console.log(newDogTags)
 
 
   return (

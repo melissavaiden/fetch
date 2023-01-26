@@ -32,7 +32,7 @@ function App() {
         <Route path='/' element={<SignInPage setUser={setUser} user={user}/>}></Route>
         <Route path='/user_sign_up' element={<UserSignUpPage setUser={setUser}/>}></Route>
         <Route path='/favorites' element={<Favorites />}></Route>
-        <Route path='/newdog' element={<NewDog />}></Route>
+        <Route path='/newdog' element={<NewDog user={user}/>}></Route>
         <Route path='/mydogs' element={<MyPups user={user}/>}></Route>
       </Routes>
     </>

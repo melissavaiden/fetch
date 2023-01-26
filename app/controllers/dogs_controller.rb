@@ -10,6 +10,15 @@ class DogsController < ApplicationController
         render json: dog
     end
 
+    def create
+        dog = Dog.create(dog_params)
+        if dog.valid?   
+            render json: dog
+        else
+            render json: "This dog ain't right :( Try again!", status: :unprocessable_entity
+        end
+    end
+
     def my_pups
         dogs = Dog.find_by(user_id: session[:user_id])
         if dogs
@@ -22,6 +31,6 @@ class DogsController < ApplicationController
     private
 
     def dog_params
-        Dog.find(params[:id])
+        params.permit(:name, :picture_url, :age, :tags, :user_id)
     end
 end
