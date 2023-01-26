@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 
 function UserSignUpPage({setUser}) {
+  const [error, setError] = useState()
   const [newUser, setNewUser] = useState({
     username:"",
     password:""
@@ -49,13 +50,17 @@ function UserSignUpPage({setUser}) {
             }
           })
         })
-      }})
+      } else {
+        r.json().then((error) => setError(error.error))
+      }
+    })
   }
 
   return (
     <div>
       <h1 className='page_title'>Sign Up</h1>
       <div className='container'>
+        <div>{error}</div>
         <form onSubmit={handleSubmit}>
           <div className='form-floating'>
             <input className='form-control' name='username' placeholder='username' onChange={handleChange}></input>

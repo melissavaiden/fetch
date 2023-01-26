@@ -21,7 +21,7 @@ class UsersController < ApplicationController
             session[:user_id] = user.id
             render json: user, status: :ok
         else
-            render json: { error: "Username already taken" }, status: :unprocessable_entity
+            render json: { error: "Username already taken :( Please try again." }, status: :unprocessable_entity
         end
     end
 
