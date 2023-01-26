@@ -11,7 +11,7 @@ function NewDog() {
     })
 
     useEffect(() => {
-        fetch("http://localhost:3000/tags")
+        fetch("/tags")
         .then((r) => r.json())
         .then((tag) => setTags(tag))
     },[])
