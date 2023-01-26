@@ -8,7 +8,11 @@ class UsersController < ApplicationController
 
     def show
         user = User.find_by(id: session[:user_id])
-        render json: user, include: :dogs
+        if user.valid?
+            render json: user, include: :dogs
+        else
+            render json: 'User not found', status: :not_found
+        end
     end
 
     def create
@@ -17,7 +21,7 @@ class UsersController < ApplicationController
             session[:user_id] = user.id
             render json: user, status: :ok
         else
-            render json: { error: user.errors.full_messages}, status: :unprocessable_entity
+            render json: { error: "Username already taken" }, status: :unprocessable_entity
         end
     end
 
