@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 function NavBar({setUser, user}) {
   const navigate = useNavigate();
@@ -21,11 +21,11 @@ function NavBar({setUser, user}) {
   return (
     <div className='navbar navbar-expand'>
       <div className='container'>
-        <NavLink to='/homepage'>Home</NavLink>
-        <NavLink to='/favorites'>Favorites</NavLink>
-        <NavLink to='/newdog'>Add a New Pup!</NavLink>
-        <NavLink to='/mydogs' >My Pupperinos</NavLink>
-        <NavLink to='/'onClick={handleLogOut}>Log Out</NavLink>
+        <Link to='/homepage'>Home</Link>
+        <Link to='/favorites'>Favorites</Link>
+        <Link to='/newdog'>Add a New Pup!</Link>
+        <Link to='/mydogs' >My Pupperinos</Link>
+        <Link to='/'onClick={handleLogOut}>Log Out</Link>
       </div>
     </div>
   )

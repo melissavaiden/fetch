@@ -9,7 +9,7 @@ function DogCard({dogs}) {
         <div className='card-body'>
         <img className='card-img-top' alt='dog' src={dog.picture_url}></img>
         <h1 className='card-title'>{dog.name}</h1>
-        <div className='card-subtitle'>{dog.age}</div>
+        <div className='card-subtitle'>Age: {dog.age}</div>
         <button className='btn btn-primary'>Add to Favorites</button>
         <button className='btn btn-primary'>Hide</button>
         <OwnerCard />

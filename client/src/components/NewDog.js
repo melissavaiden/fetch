@@ -19,23 +19,36 @@ function NewDog() {
 
     let tagButtons = tags.map((tag) => {
         return(
-            <button className='btn btn-outline-dark' data-bs-toggle="button" onClick={addTagsToNewDog(tag.id)}key={tag.id} id={tag.id}>{tag.title}</button>
+            <button className='btn btn-outline-dark' data-bs-toggle="button" value={tag.id} key={tag.id} id={tag.id}>{tag.title}</button>
         )
     })
 
     function handleDogChange(e) {
-        console.log(e.target.value)
+        setNewDog({
+            ...newDog,
+            [e.target.name] : e.target.value
+        })
     }
 
-    function addTagsToNewDog (newTagId) {
-        setNewDogTags({...newDogTags, newTagId})
-        console.log(newDogTags)
+    function addTagsToNewDog(newTagId) {
+        setNewDogTags(newDogTags => [...newDogTags, newTagId])
     }
+
+    function formSubmit(e) {
+        e.preventDefault();
+        let selectedTags = document.getElementsByClassName('active')
+        let selectedTagsArray = [...selectedTags]
+        selectedTagsArray.map((tag) => {
+            setNewDogTags(newDogTags => [...newDogTags, tag.id])
+        })
+    }
+    console.log(newDogTags)
 
 
   return (
     <div>
         <NavBar />
+        <form onSubmit={formSubmit}>
         <div className='row'>
             <label className='form-label'>Name:
             <input className='form-control' onChange={handleDogChange} name='name'></input>
@@ -53,7 +66,8 @@ function NewDog() {
         </div>
         <div>What are some of your dog's favorite things?</div>
         {tagButtons}
-
+        <button type='submit'>Submit</button>
+        </form>
     </div>
   )
 }

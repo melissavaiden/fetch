@@ -48,6 +48,7 @@ export default function SignInPage({setUser, user}) {
   }
   return (
     <div className='container'>
+      <h1 className='page_title'>Login</h1>
       <form onSubmit={handleSubmit}>
         <div>{errors}</div>
         <div className="form-floating">
