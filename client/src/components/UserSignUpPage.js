@@ -57,16 +57,16 @@ function UserSignUpPage({setUser}) {
       <h1 className='page_title'>Sign Up</h1>
       <div className='container'>
         <form onSubmit={handleSubmit}>
-          <div className='row'>
-            <label className='form-label'>Username:
-            <input className='form-control' name='username' onChange={handleChange}></input>
-            </label>
+          <div className='form-floating'>
+            <input className='form-control' name='username' placeholder='username' onChange={handleChange}></input>
+            <label className='form-label'>Username</label>
            </div>
-          <div className='row'>  
-            <label className='form-label'>Password:
-            <input className='form-control' name='password' type='password' onChange={handleChange}></input>
-            </label>
+           <br></br>
+          <div className='form-floating'> 
+            <input className='form-control' name='password' type='password' placeholder='password' onChange={handleChange}></input>
+            <label className='form-label'>Password</label>
           </div>
+          <br></br>
           <button type='submit' className='btn btn-primary'>Submit</button>
         </form>
         <div className='container'>
