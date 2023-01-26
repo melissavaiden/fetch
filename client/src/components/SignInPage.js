@@ -4,6 +4,7 @@ import {NavLink, useNavigate} from 'react-router-dom'
 export default function SignInPage({setUser, user}) {
   const [username, setUsername] = useState()
   const [password, setPassword] = useState()
+  const [errors, setErrors] = useState()
   const navigate = useNavigate();
 
 
@@ -23,9 +24,12 @@ export default function SignInPage({setUser, user}) {
     .then((r) => {
       if (r.ok) {
         r.json().then((currentUser) => setUser(currentUser))
+      } else {
+        r.json().then((error) => setErrors(error.errors))
       }
     })
   }
+
   useEffect(() => {
     if (user.id)
       navigate("/homepage")
@@ -45,6 +49,7 @@ export default function SignInPage({setUser, user}) {
   return (
     <div className='container'>
       <form onSubmit={handleSubmit}>
+        <div>{errors}</div>
         <div className="form-floating">
           <input type='username' className='form-control' placeholder='username' onChange={handleUserChange}></input>
           <label>Username</label>

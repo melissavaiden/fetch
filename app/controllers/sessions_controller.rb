@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       render json: user, status: :ok 
     else
-      render json: { errors: 'Unauthorized user' } , status: :unauthorized
+      render json: { errors: 'Sorry, this user does not exist! Please try again.' } , status: :unauthorized
     end
   end
 
