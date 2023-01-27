@@ -32,6 +32,7 @@ function NewDog({user}) {
         })
     }
 
+
     function formSubmit(e) {
         e.preventDefault();
         let selectedTags = document.getElementsByClassName('active')
@@ -51,30 +52,33 @@ function NewDog({user}) {
               "age": newDog.age
             }),
           })
-        .then((r) => r.json())
-        .then((dog) => console.log(dog))
+        .then((r) => {
+            if (r.ok) {
+                r.json().then((dog) => console.log(dog))
+            }
+        })
     }
-
 
   return (
     <div>
         <NavBar />
         <form onSubmit={formSubmit}>
-        <div className='row'>
-            <label className='form-label'>Name:
-            <input className='form-control' onChange={handleDogChange} name='name'></input>
-            </label>
+        <br></br>
+        <div className='form-floating'>
+            <input className='form-control' placeholder='name' onChange={handleDogChange} name='name'></input>
+            <label>Name</label>
         </div>
-        <div className='row'>
-            <label className='form-label'>Picture:
-            <input className='form-control' type='file' onChange={handleDogChange} name='picture_url'></input>
-            </label>
+        <br></br>
+        <div className='form-floating'>
+            <input className='form-control' placeholder='picture' onChange={handleDogChange} name='picture_url'></input>
+            <label>Picture URL</label>
         </div>
-        <div className='row'>
-            <label className='form-label'>Age:
-            <input className='form-control' type='number' onChange={handleDogChange} name='age'></input>
-            </label>
+        <br></br>
+        <div className='form-floating'>
+            <input className='form-control' type='number' placeholder='age' onChange={handleDogChange} name='age'></input>
+            <label>Age</label>
         </div>
+        <br></br>
         <div>What are some of your dog's favorite things?</div>
         {tagButtons}
         <button type='submit'>Submit</button>
