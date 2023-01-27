@@ -15,7 +15,7 @@ class DogsController < ApplicationController
         if dog.valid?   
             render json: dog
         else
-            render json: "This dog ain't right :( Try again!", status: :unprocessable_entity
+            render json: { error: "This dog ain't right! Try again!"}, status: :unprocessable_entity
         end
     end
 

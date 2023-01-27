@@ -4,6 +4,7 @@ import NavBar from './NavBar'
 function NewDog({user}) {
     const [tags, setTags] = useState([])
     const [newDogTags, setNewDogTags] = useState([])
+    const [errors, setErrors] = useState()
     const [newDog, setNewDog] = useState({
         user_id: user.id,
         picture_url:"",
@@ -55,6 +56,8 @@ function NewDog({user}) {
         .then((r) => {
             if (r.ok) {
                 r.json().then((dog) => console.log(dog))
+            } else {
+                r.json().then((error) => setErrors(error.error))
             }
         })
     }
@@ -64,6 +67,7 @@ function NewDog({user}) {
         <NavBar />
         <form onSubmit={formSubmit}>
         <br></br>
+        <div>{errors}</div>
         <div className='form-floating'>
             <input className='form-control' placeholder='name' onChange={handleDogChange} name='name'></input>
             <label>Name</label>
