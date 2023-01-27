@@ -4,6 +4,7 @@ import OwnerCard from './OwnerCard'
 function DogCard({dogs}) {
 
   let dog = dogs.map((dog) => {
+    console.log(dog)
     return (
       <div key={dog.id} className='card'>
         <div className='card-body'>
