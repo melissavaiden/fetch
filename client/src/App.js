@@ -9,9 +9,8 @@ import NewDog from './components/NewDog';
 import MyPups from './components/MyPups';
 
 function App() {
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState({dogs: []})
   const [errors, setErrors] = useState('')
-
 
   useEffect(() => {
     fetch("/me").then((r) => {
@@ -33,7 +32,7 @@ function App() {
         <Route path='/user_sign_up' element={<UserSignUpPage setUser={setUser}/>}></Route>
         <Route path='/favorites' element={<Favorites />}></Route>
         <Route path='/newdog' element={<NewDog user={user}/>}></Route>
-        <Route path='/mydogs' element={<MyPups user={user}/>}></Route>
+        <Route path='/mydogs' element={<MyPups userDogs={user.dogs}/>}></Route>
       </Routes>
     </>
   );

@@ -1,10 +1,10 @@
 import React from 'react'
 
-function OwnerCard() {
+function OwnerCard({dog_owner}) {
   return (
     <div>
-        <p>Owner Pic</p>
-        <p>Owner Name</p>
+        <br></br>
+        <h2>My owner's name is {dog_owner.username}!</h2>
     </div>
   )
 }

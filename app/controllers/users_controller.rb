@@ -8,8 +8,8 @@ class UsersController < ApplicationController
 
     def show
         user = User.find_by(id: session[:user_id])
-        if user.valid?
-            render json: user, include: :dogs
+        if user
+            render json: user
         else
             render json: 'User not found', status: :not_found
         end

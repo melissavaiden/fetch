@@ -13,7 +13,7 @@ function DogCard({dogs}) {
         <div className='card-subtitle'>Age: {dog.age}</div>
         <button className='btn btn-primary'>Add to Favorites</button>
         <button className='btn btn-primary'>Hide</button>
-        <OwnerCard />
+        <OwnerCard dog_owner={dog.user}/>
         </div>
       </div>
     )

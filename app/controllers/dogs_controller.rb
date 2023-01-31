@@ -2,7 +2,7 @@ class DogsController < ApplicationController
 
     def index
         dogs = Dog.all
-        render json: dogs, include: :user
+        render json: dogs, include: [:user, :tags]
     end
 
     def show

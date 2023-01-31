@@ -27,7 +27,7 @@ puts 'Start Seeding!'
   User.create(username: 'PawfectMatch', password: 'hello')
   User.create(username: 'DoggyDate', password: 'hello')
   User.create(username: 'TailWagginLove', password: 'hello')
-  User.create(username: 'LeashLover', password: 'hello')
+  User.create(username: 'CholeKing', password: 'hello')
   User.create(username: 'HoundHarmony', password: 'hello')
   User.create(username: 'BoneAmor', password: 'hello')
 
