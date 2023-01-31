@@ -20,7 +20,9 @@ class DogsController < ApplicationController
     end
 
     def destroy
-        dog = Dog.find_by(id: )
+        dog = Dog.find_by(id: params[:id])
+        dog.destroy
+        render json: dog, status: :no_content
     end
 
     def my_pups

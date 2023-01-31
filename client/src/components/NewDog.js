@@ -51,12 +51,24 @@ function NewDog({user}) {
               "picture_url": newDog.picture_url,
               "name": newDog.name,
               "age": newDog.age,
-              "tags": newDogTags
             }),
           })
         .then((r) => {
             if (r.ok) {
-                r.json().then((dog) => console.log(dog))
+                r.json().then((dog) => {
+                    newDogTags.map((dogId) => {
+                        fetch('/dog_tags', {
+                            method: 'POST',
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify({
+                                "dog_id": dog.id,
+                                "tag_id": dogId
+                            })
+                        })
+                    })
+                })
             } else {
                 r.json().then((error) => setErrors(error.error))
             }

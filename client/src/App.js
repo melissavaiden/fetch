@@ -23,6 +23,8 @@ function App() {
     });
   }, []);
 
+  
+
   return (
     <>
     <div className='display-1' id='page_title'>FETCH</div>
