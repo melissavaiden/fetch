@@ -50,7 +50,8 @@ function NewDog({user}) {
               "user_id": newDog.user_id,
               "picture_url": newDog.picture_url,
               "name": newDog.name,
-              "age": newDog.age
+              "age": newDog.age,
+              "tags": newDogTags
             }),
           })
         .then((r) => {

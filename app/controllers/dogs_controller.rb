@@ -13,10 +13,14 @@ class DogsController < ApplicationController
     def create
         dog = Dog.create(dog_params)
         if dog.valid?   
-            render json: dog
+            render json: dog, status: :created
         else
-            render json: { error: "This dog ain't right! Try again!"}, status: :unprocessable_entity
+            render json: { error: "This dog ain't right! Try again!"} , status: :unprocessable_entity
         end
+    end
+
+    def destroy
+        dog = Dog.find_by(id: )
     end
 
     def my_pups
@@ -24,13 +28,13 @@ class DogsController < ApplicationController
         if dogs
             render json: dogs, status: :ok
         else
-            render json: 'Oh No, You have no pups :(', status: :not_found
+            render json: { error: 'Oh No, You have no pups :('} , status: :not_found
         end
     end
 
     private
 
     def dog_params
-        params.permit(:name, :picture_url, :age, :user_id)
+        params.permit(:name, :picture_url, :age, :user_id, :tags)
     end
 end

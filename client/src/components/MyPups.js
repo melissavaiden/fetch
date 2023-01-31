@@ -5,6 +5,7 @@ function MyPups({userDogs}) {
 
     console.log(userDogs)
 
+
     let dogs = userDogs.map((dog) => {
       return (
         <div key={dog.id} className='card'>
