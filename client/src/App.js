@@ -25,8 +25,14 @@ function App() {
 
   function handleDeleteDog(deletedDogId) {
     const updatedList = user.dogs.filter((dog) => deletedDogId !== dog.id)
+    console.log(updatedList)
     setUser(updatedList)
   }
+
+  function handleNewDog(newDog) {
+    const addNewDog = user.dogs.push(newDog)
+      setUser(addNewDog)
+    }
 
   
 
@@ -38,7 +44,7 @@ function App() {
         <Route path='/' element={<SignInPage setUser={setUser} user={user}/>}></Route>
         <Route path='/user_sign_up' element={<UserSignUpPage setUser={setUser}/>}></Route>
         <Route path='/favorites' element={<Favorites />}></Route>
-        <Route path='/newdog' element={<NewDog user={user}/>}></Route>
+        <Route path='/newdog' element={<NewDog user={user} handleNewDog={handleNewDog}/>}></Route>
         <Route path='/mydogs' element={<MyPups userDogs={user.dogs} handleDeleteDog={handleDeleteDog}/>}></Route>
       </Routes>
     </>

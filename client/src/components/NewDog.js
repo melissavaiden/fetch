@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import NavBar from './NavBar'
 import { useNavigate } from 'react-router-dom'
 
-function NewDog({user}) {
+function NewDog({user, handleNewDog}) {
     const navigate = useNavigate();
     const [tags, setTags] = useState([])
     const [newDogTags, setNewDogTags] = useState([])
@@ -24,7 +24,7 @@ function NewDog({user}) {
 
     let tagButtons = tags.map((tag) => {
         return(
-            <button className='btn btn-outline-dark' data-bs-toggle="button" value={tag.id} key={tag.id} id={tag.id}>{tag.title}</button>
+            <button className='btn btn-outline-dark' data-bs-toggle="button" value={tag.id} key={tag.id} id={tag.id} onClick={handleTagClick}>{tag.title}</button>
         )
     })
 
@@ -36,13 +36,22 @@ function NewDog({user}) {
     }
 
 
+    function handleTagClick() {
+        let selectedTags = document.getElementsByClassName('active')
+        setNewDogTags(selectedTags)
+    }
+
+    function addTagsToDog(e) {
+        e.preventDefault();
+        let tagIds = []
+        for (let i = 0; i < newDogTags.length; i++) {
+            tagIds.push(newDogTags[i].id)
+        }
+        setNewDogTags(tagIds)
+    }
+
     function formSubmit(e) {
         e.preventDefault();
-        let selectedTags = document.getElementsByClassName('active')
-        let selectedTagsArray = [...selectedTags]
-        selectedTagsArray.map((tag) => {
-            setNewDogTags([...newDogTags, tag.id])
-        })
         fetch('/dogs', {
             method: "POST",
             headers: {
@@ -56,23 +65,10 @@ function NewDog({user}) {
             }),
           })
         .then((r) => {
+            console.log(r)
             if (r.ok) {
                 r.json().then((dog) => {
-                    newDogTags.map((tag) => {
-                        console.log(dog.id)
-                        fetch('/dog_tags', {
-                            method: 'POST',
-                            headers: {
-                                "Content-Type": "application/json"
-                            },
-                            body: JSON.stringify({
-                                "dog_id": dog.id,
-                                "tag_id": tag
-                            })
-                        })
-                        .then((r) => r.json())
-                        .then((r) => console.log(r))
-                    })
+                    console.log(dog)
                 })
             } else {
                 r.json().then((error) => setErrors(error.error))
@@ -104,7 +100,8 @@ function NewDog({user}) {
         <br></br>
         <div>What are some of your dog's favorite things?</div>
         {tagButtons}
-        <button type='submit'>Submit</button>
+        <button onClick={addTagsToDog}>Add Tags</button>
+        <button className='btn btn-primary' type='submit'>Submit</button>
         </form>
     </div>
   )

@@ -3,9 +3,6 @@ import NavBar from './NavBar'
 
 function MyPups({userDogs, handleDeleteDog}) {
 
-    console.log(userDogs)
-
-
     function deleteDog(e) {
       fetch(`/dogs/${e.target.id}`, {
         method: 'DELETE',
