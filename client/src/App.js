@@ -23,6 +23,11 @@ function App() {
     });
   }, []);
 
+  function handleDeleteDog(deletedDogId) {
+    const updatedList = user.dogs.filter((dog) => deletedDogId !== dog.id)
+    setUser(updatedList)
+  }
+
   
 
   return (
@@ -34,7 +39,7 @@ function App() {
         <Route path='/user_sign_up' element={<UserSignUpPage setUser={setUser}/>}></Route>
         <Route path='/favorites' element={<Favorites />}></Route>
         <Route path='/newdog' element={<NewDog user={user}/>}></Route>
-        <Route path='/mydogs' element={<MyPups userDogs={user.dogs}/>}></Route>
+        <Route path='/mydogs' element={<MyPups userDogs={user.dogs} handleDeleteDog={handleDeleteDog}/>}></Route>
       </Routes>
     </>
   );

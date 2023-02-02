@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate, Link } from 'react-router-dom';
 
-function NavBar({setUser, user}) {
+function NavBar({setUser}) {
   const navigate = useNavigate();
 
 

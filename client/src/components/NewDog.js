@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import NavBar from './NavBar'
+import { useNavigate } from 'react-router-dom'
 
 function NewDog({user}) {
+    const navigate = useNavigate();
     const [tags, setTags] = useState([])
     const [newDogTags, setNewDogTags] = useState([])
     const [errors, setErrors] = useState()
@@ -39,7 +41,7 @@ function NewDog({user}) {
         let selectedTags = document.getElementsByClassName('active')
         let selectedTagsArray = [...selectedTags]
         selectedTagsArray.map((tag) => {
-            setNewDogTags(newDogTags => [...newDogTags, tag.id])
+            setNewDogTags([...newDogTags, tag.id])
         })
         fetch('/dogs', {
             method: "POST",
@@ -56,7 +58,8 @@ function NewDog({user}) {
         .then((r) => {
             if (r.ok) {
                 r.json().then((dog) => {
-                    newDogTags.map((dogId) => {
+                    newDogTags.map((tag) => {
+                        console.log(dog.id)
                         fetch('/dog_tags', {
                             method: 'POST',
                             headers: {
@@ -64,15 +67,18 @@ function NewDog({user}) {
                             },
                             body: JSON.stringify({
                                 "dog_id": dog.id,
-                                "tag_id": dogId
+                                "tag_id": tag
                             })
                         })
+                        .then((r) => r.json())
+                        .then((r) => console.log(r))
                     })
                 })
             } else {
                 r.json().then((error) => setErrors(error.error))
             }
         })
+        navigate('/homepage')
     }
 
   return (

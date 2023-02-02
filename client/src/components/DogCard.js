@@ -5,7 +5,7 @@ function DogCard({dogs}) {
 
   let dog = dogs.map((dog) => {
     let dogTags = dog.tags.map((tag) => {
-      return <li>{tag.title}</li>
+      return <li key={tag.id}>{tag.title}</li>
     })
 
     return (

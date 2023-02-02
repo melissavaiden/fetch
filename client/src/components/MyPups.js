@@ -1,17 +1,23 @@
 import React from 'react'
 import NavBar from './NavBar'
 
-function MyPups({userDogs}) {
+function MyPups({userDogs, handleDeleteDog}) {
 
     console.log(userDogs)
 
 
     function deleteDog(e) {
       fetch(`/dogs/${e.target.id}`, {
-        method: 'DELETE'
+        method: 'DELETE',
       })
-      .then((r) => r.json())
-      .then((deletedDog) => console.log(deletedDog))
+      .then((r) => {
+        if (r.ok) {
+          handleDeleteDog(e.target.id)
+        }
+        else {
+          console.log('Error')
+        }
+      })
     }
 
     function editDog(e) {
