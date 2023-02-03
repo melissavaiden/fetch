@@ -17,7 +17,6 @@ function DogCard({dogs}) {
         <div>Things I Love:</div>
         {dogTags}
         {/* <button className='btn btn-primary'>Add to Favorites</button> */}
-        {/* <button className='btn btn-primary'>Hide</button> */}
         <OwnerCard dog_owner={dog.user}/>
         </div>
       </div>

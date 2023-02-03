@@ -25,7 +25,6 @@ function MyPups({userDogs, handleDeleteDog, updateDog}) {
       updateDog(dog)
     }
 
-
     let dogs = userDogs.map((dog) => {
       return (
         <div key={dog.id} className='card'>
