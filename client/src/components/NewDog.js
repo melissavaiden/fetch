@@ -48,9 +48,11 @@ function NewDog({user, handleNewDog}) {
             tagIds.push(newDogTags[i].id)
         }
         setNewDogTags(tagIds)
+        alert('Tags Added!')
     }
 
     function formSubmit(e) {
+        console.log(newDogTags)
         e.preventDefault();
         fetch('/dogs', {
             method: "POST",
@@ -62,10 +64,10 @@ function NewDog({user, handleNewDog}) {
               "picture_url": newDog.picture_url,
               "name": newDog.name,
               "age": newDog.age,
+              "tags": newDogTags
             }),
           })
         .then((r) => {
-            console.log(r)
             if (r.ok) {
                 r.json().then((dog) => {
                     console.log(dog)
@@ -74,7 +76,7 @@ function NewDog({user, handleNewDog}) {
                 r.json().then((error) => setErrors(error.error))
             }
         })
-        navigate('/homepage')
+        // navigate('/homepage')
     }
 
   return (

@@ -7,6 +7,7 @@ import UserSignUpPage from './components/UserSignUpPage';
 import Favorites from './components/Favorites';
 import NewDog from './components/NewDog';
 import MyPups from './components/MyPups';
+import EditDog from './components/EditDog';
 
 function App() {
   const [user, setUser] = useState({dogs: []})
@@ -46,6 +47,7 @@ function App() {
         <Route path='/favorites' element={<Favorites />}></Route>
         <Route path='/newdog' element={<NewDog user={user} handleNewDog={handleNewDog}/>}></Route>
         <Route path='/mydogs' element={<MyPups userDogs={user.dogs} handleDeleteDog={handleDeleteDog}/>}></Route>
+        <Route path='/updateDog' element={<EditDog />}></Route>
       </Routes>
     </>
   );

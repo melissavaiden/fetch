@@ -1,7 +1,10 @@
 import React from 'react'
 import NavBar from './NavBar'
+import { useNavigate } from 'react-router-dom'
 
 function MyPups({userDogs, handleDeleteDog}) {
+  const navigate = useNavigate();
+
 
     function deleteDog(e) {
       fetch(`/dogs/${e.target.id}`, {
@@ -17,8 +20,8 @@ function MyPups({userDogs, handleDeleteDog}) {
       })
     }
 
-    function editDog(e) {
-      console.log(e.target.id)
+    function editDog() {
+      navigate('/updateDog')
     }
 
 
