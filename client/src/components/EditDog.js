@@ -1,16 +1,24 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import NavBar from './NavBar'
 
 function EditDog({editDog}) {
   const [updateDog, setUpdateDog] = useState([])
+
+  useEffect(() => {
+    fetch(`/dogs/${editDog.id}`)
+    .then((r) => r.json())
+    .then((dog) => setUpdateDog(dog))
+  },[])
+
 
   function handleChange(e) {
     console.log(e.target.value)
   }
 
-  console.log(editDog)
-
+  console.log(updateDog)
   return (
     <div>
+      <NavBar />
       <form>
         <h1>Edit Dog</h1>
         <div className='form-group'>

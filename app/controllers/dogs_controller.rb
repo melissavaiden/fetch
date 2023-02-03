@@ -6,7 +6,7 @@ class DogsController < ApplicationController
     end
 
     def show
-        dog = dog_params
+        dog = Dog.find_by(id: params[:id])
         render json: dog
     end
 
