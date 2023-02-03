@@ -11,6 +11,7 @@ import EditDog from './components/EditDog';
 
 function App() {
   const [user, setUser] = useState({dogs: []})
+  const [editDog, setEditDog] = useState(null)
   const [errors, setErrors] = useState('')
 
   useEffect(() => {
@@ -35,6 +36,10 @@ function App() {
       setUser(addNewDog)
     }
 
+  function updateDog(updatedDog) {
+      setEditDog(updatedDog)
+  }
+
   
 
   return (
@@ -46,8 +51,8 @@ function App() {
         <Route path='/user_sign_up' element={<UserSignUpPage setUser={setUser}/>}></Route>
         <Route path='/favorites' element={<Favorites />}></Route>
         <Route path='/newdog' element={<NewDog user={user} handleNewDog={handleNewDog}/>}></Route>
-        <Route path='/mydogs' element={<MyPups userDogs={user.dogs} handleDeleteDog={handleDeleteDog}/>}></Route>
-        <Route path='/updateDog' element={<EditDog />}></Route>
+        <Route path='/mydogs' element={<MyPups userDogs={user.dogs} handleDeleteDog={handleDeleteDog} updateDog={updateDog}/>}></Route>
+        <Route path='/updateDog' element={<EditDog editDog={editDog}/>}></Route>
       </Routes>
     </>
   );

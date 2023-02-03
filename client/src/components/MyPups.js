@@ -2,7 +2,7 @@ import React from 'react'
 import NavBar from './NavBar'
 import { useNavigate } from 'react-router-dom'
 
-function MyPups({userDogs, handleDeleteDog}) {
+function MyPups({userDogs, handleDeleteDog, updateDog}) {
   const navigate = useNavigate();
 
 
@@ -20,8 +20,9 @@ function MyPups({userDogs, handleDeleteDog}) {
       })
     }
 
-    function editDog() {
+    function editDog(e) {
       navigate('/updateDog')
+      updateDog(e.target.id)
     }
 
 

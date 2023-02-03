@@ -1,8 +1,11 @@
 import React from 'react'
 
-function EditDog() {
+function EditDog({editDog}) {
   return (
-    <div>EditDog</div>
+    <div>
+      EditDog
+      <p>{editDog}</p>
+    </div>
   )
 }
 
