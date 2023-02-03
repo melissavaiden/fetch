@@ -22,7 +22,6 @@ function NavBar({setUser}) {
     <div className='navbar navbar-expand'>
       <div className='container'>
         <Link to='/homepage'>Home</Link>
-        <Link to='/favorites'>Favorites</Link>
         <Link to='/newdog'>Add a New Pup!</Link>
         <Link to='/mydogs' >My Pupperinos</Link>
         <Link to='/'onClick={handleLogOut}>Log Out</Link>
