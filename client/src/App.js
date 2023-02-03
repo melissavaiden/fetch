@@ -11,7 +11,7 @@ import EditDog from './components/EditDog';
 
 function App() {
   const [user, setUser] = useState({dogs: []})
-  const [editDog, setEditDog] = useState(null)
+  const [editDog, setEditDog] = useState([])
   const [errors, setErrors] = useState('')
 
   useEffect(() => {
@@ -21,7 +21,6 @@ function App() {
       }
       else
         setErrors('Error')
-
     });
   }, []);
 

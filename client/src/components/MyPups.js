@@ -20,9 +20,9 @@ function MyPups({userDogs, handleDeleteDog, updateDog}) {
       })
     }
 
-    function editDog(e) {
+    function editDog(dog) {
       navigate('/updateDog')
-      updateDog(e.target.id)
+      updateDog(dog)
     }
 
 
@@ -33,7 +33,7 @@ function MyPups({userDogs, handleDeleteDog, updateDog}) {
           <img className='card-img-top' alt='dog' src={dog.picture_url}></img>
           <h1 className='card-title'>{dog.name}</h1>
           <div className='card-subtitle'>{dog.age}</div>
-          <button className='btn btn-primary' id={dog.id} onClick={editDog}>Edit</button>
+          <button className='btn btn-primary' id={dog.id} onClick={() => editDog(dog)}>Edit</button>
           <button className='btn btn-primary' id={dog.id} onClick={deleteDog}>Delete</button>
           </div>
         </div>
