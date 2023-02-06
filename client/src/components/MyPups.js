@@ -12,7 +12,7 @@ function MyPups({userDogs, handleDeleteDog, updateDog}) {
       })
       .then((r) => {
         if (r.ok) {
-          handleDeleteDog(e.target.id)
+          handleDeleteDog(parseInt(e.target.id))
         }
         else {
           console.log('Error')

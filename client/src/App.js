@@ -25,13 +25,19 @@ function App() {
 
   function handleDeleteDog(deletedDogId) {
     const updatedList = user.dogs.filter((dog) => deletedDogId !== dog.id)
-    console.log(updatedList)
-    setUser(updatedList)
+    const newUserData = {
+      ...user,
+      dogs: updatedList
+    }
+    setUser(newUserData)
   }
 
   function handleNewDog(newDog) {
-    const addNewDog = user.dogs.push(newDog)
-      setUser(addNewDog)
+    const newUserData = {
+      ...user,
+      dogs: [...user.dogs, newDog]
+    }
+      setUser(newUserData)
     }
 
   function updateDog(updatedDog) {

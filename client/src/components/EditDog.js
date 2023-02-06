@@ -33,7 +33,6 @@ function EditDog({editDog}) {
     })
   }
 
-  console.log(updateDog)
 
   function handleTagClick() {
     let selectedTags = document.getElementsByClassName('active')

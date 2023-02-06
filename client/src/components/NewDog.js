@@ -52,7 +52,6 @@ function NewDog({user, handleNewDog}) {
     }
 
     function formSubmit(e) {
-        console.log(newDogTags)
         e.preventDefault();
         fetch('/dogs', {
             method: "POST",
@@ -64,13 +63,15 @@ function NewDog({user, handleNewDog}) {
               "picture_url": newDog.picture_url,
               "name": newDog.name,
               "age": newDog.age,
-              "tags": newDogTags
+              "tag_ids": newDogTags
             }),
           })
         .then((r) => {
             if (r.ok) {
                 r.json().then((dog) => {
-                    console.log(dog)
+                    handleNewDog(dog)
+                    navigate('/homepage')
+
                 })
             } else {
                 r.json().then((error) => setErrors(error.error))

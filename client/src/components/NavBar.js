@@ -11,7 +11,7 @@ function NavBar({setUser}) {
     })
     .then((r) => {
       if (r.ok) {
-        setUser({})
+        setUser({dogs:[]})
         navigate('/')
       }
     })
