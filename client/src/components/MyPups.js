@@ -25,13 +25,19 @@ function MyPups({userDogs, handleDeleteDog, updateDog}) {
       updateDog(dog)
     }
 
+
     let dogs = userDogs.map((dog) => {
+      let dogTags = dog.tags.map((tag) => {
+        return <li key={tag.id}>{tag.title}</li>
+      })
       return (
         <div key={dog.id} className='card'>
           <div className='card-body'>
           <img className='card-img-top' alt='dog' src={dog.picture_url}></img>
           <h1 className='card-title'>{dog.name}</h1>
           <div className='card-subtitle'>{dog.age}</div>
+          <div>Things I Love:</div>
+          {dogTags}
           <button className='btn btn-primary' id={dog.id} onClick={() => editDog(dog)}>Edit</button>
           <button className='btn btn-primary' id={dog.id} onClick={deleteDog}>Delete</button>
           </div>
