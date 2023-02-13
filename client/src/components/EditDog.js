@@ -2,7 +2,14 @@ import React, { useEffect, useState } from 'react'
 import NavBar from './NavBar'
 
 function EditDog({editDog}) {
-  const [updateDog, setUpdateDog] = useState([])
+  const [updateDog, setUpdateDog] = useState({
+      id: editDog.id,
+      user_id: editDog.user_id,
+      picture_url: editDog.picture_url,
+      name: editDog.name,
+      age: editDog.age,
+      tag_ids: editDog.tags
+  })
   const [tags, setTags] = useState([])
   const [editTags, setEditTags] = useState([])
 
@@ -49,11 +56,29 @@ function addTagsToDog(e) {
   alert('Tags Added!')
 }
 
+function handleSubmit() {
+  fetch(`/dogs/${updateDog.id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      "user_id": updateDog.user_id,
+      "picture_url": updateDog.picture_url,
+      "name": updateDog.name,
+      "age": updateDog.age,
+      "tag_ids": editTags
+    }),
+  })
+  // .then((r) => r.json())
+  // .then((dog) => console.log(dog))
+}
+
 
   return (
     <div>
       <NavBar />
-      <form>
+      <form onSubmit={handleSubmit}>
         <h1>Edit Dog</h1>
         <div className='form-group'>
           <label className='form-label'>Name</label>

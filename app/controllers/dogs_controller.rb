@@ -34,6 +34,16 @@ class DogsController < ApplicationController
         end
     end
 
+    def update
+        dog = Dog.find_by(id: params[:id])
+        if dog
+            dog.update(dog_params)
+            render json: dog, status: :created
+        else 
+            render json: { error: 'Please try again' }, status: :unprocessable_entity
+        end
+    end
+
     private
 
     def dog_params
