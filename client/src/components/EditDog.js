@@ -70,8 +70,8 @@ function handleSubmit() {
       "tag_ids": editTags
     }),
   })
-  // .then((r) => r.json())
-  // .then((dog) => console.log(dog))
+  .then((r) => r.json())
+  .then((dog) => console.log(dog))
 }
 
 

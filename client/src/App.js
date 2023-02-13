@@ -51,11 +51,11 @@ function App() {
     <div className='display-1' id='page_title'>FETCH</div>
       <Routes>
         <Route path='homepage' element={<HomePage user={user} setUser={setUser}/>}></Route>
-        <Route path='/' element={<SignInPage setUser={setUser} user={user}/>}></Route>
         <Route path='/user_sign_up' element={<UserSignUpPage setUser={setUser}/>}></Route>
         <Route path='/newdog' element={<NewDog user={user} handleNewDog={handleNewDog}/>}></Route>
         <Route path='/mydogs' element={<MyPups userDogs={user.dogs} handleDeleteDog={handleDeleteDog} updateDog={updateDog}/>}></Route>
         <Route path='/updateDog' element={<EditDog editDog={editDog}/>}></Route>
+        <Route path='/' element={<SignInPage setUser={setUser} user={user}/>}></Route>
       </Routes>
     </>
   );
