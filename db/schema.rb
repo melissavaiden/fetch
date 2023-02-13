@@ -45,4 +45,8 @@ ActiveRecord::Schema.define(version: 2023_01_26_235827) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
+
+  add_foreign_key "dog_tags", "dogs"
+  add_foreign_key "dog_tags", "tags"
+
 end
